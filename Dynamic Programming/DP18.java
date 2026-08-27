@@ -8,9 +8,11 @@ public class DP18{
         }
         if(totalSum<diff){
             System.out.println("0");
+            return;
         }
         if((totalSum-diff)%2!=0){
             System.out.println("0");
+            return;
         }
         System.out.println(countPartitions(arr,(totalSum-diff)/2));
     }
