@@ -35,14 +35,11 @@ public class DP26 {
 
         while (i < s1.length() && j < s2.length()) {
 
-            // Characters are same → take this character
             if (s1.charAt(i) == s2.charAt(j)) {
                 ans.append(s1.charAt(i));
                 i++;
                 j++;
             }
-
-            // Move in the direction of the larger LCS
             else if (lcs(s1, s2, i + 1, j) >=
                      lcs(s1, s2, i, j + 1)) {
                 i++;
@@ -66,10 +63,8 @@ public class DP26 {
             Arrays.fill(row, -1);
         }
 
-        // Fill memoization table
         System.out.println("Length: " + lcs(s1, s2, 0, 0));
 
-        // Print LCS
         System.out.println("LCS: " + printLCS(s1, s2));
     }
 }
